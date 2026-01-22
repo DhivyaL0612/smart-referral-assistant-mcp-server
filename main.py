@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from pydantic import BaseModel
-import mcp_server.schemas as schemas
-import mcp_server.services as services
+import schemas as schemas
+import services as services
 
 
 
@@ -44,4 +44,5 @@ def generate_referral_endpoint(request: schemas.ReferralGenerationRequest):
     Takes structured profile and job data and returns a generated
     referral request message.
     """
+
     return services.generate_referral_message(request)

@@ -1,4 +1,4 @@
-
+import os
 import schemas as schemas 
 
 
@@ -12,7 +12,7 @@ from langchain_core.output_parsers import StrOutputParser
 # We tell the parser what our desired output schema is.
 parser = JsonOutputParser(pydantic_object=schemas.ProfileAnalysisResponse)
 
-api_key = config.GEMINI_KEY 
+api_key = os.getenv("GEMINI_KEY")
 # llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key = api_key)
 
 llm = ChatGoogleGenerativeAI(
@@ -138,3 +138,4 @@ def generate_referral_message(request: schemas.ReferralGenerationRequest) -> sch
     message = referral_chain.invoke(chain_input)
 
     return schemas.ReferralGenerationResponse(referral_message=message)
+

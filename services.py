@@ -1,6 +1,6 @@
 
-import mcp_server.schemas as schemas 
-import mcp_server.config as config
+import schemas as schemas 
+
 
 # LangChain specific imports
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -136,4 +136,5 @@ def generate_referral_message(request: schemas.ReferralGenerationRequest) -> sch
     }
 
     message = referral_chain.invoke(chain_input)
+
     return schemas.ReferralGenerationResponse(referral_message=message)

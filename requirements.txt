@@ -5,7 +5,3 @@ langchain-google-genai
 pydantic-settings
 
 
-crewai
-streamlit 
-crewai-tools
-requests

@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+google-genai
+langchain-google-genai
+pydantic-settings
+
+
+crewai
+streamlit 
+crewai-tools
+requests
